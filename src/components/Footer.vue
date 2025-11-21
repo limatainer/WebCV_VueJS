@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
 // Navigation sections
 const quickLinks = [
@@ -21,9 +20,6 @@ const socialLinks = [
 
 // Current year
 const currentYear = new Date().getFullYear()
-
-// Show back to top button
-const showBackToTop = ref(false)
 
 // Smooth scroll to section
 const scrollToSection = (sectionId: string) => {

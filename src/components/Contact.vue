@@ -2,7 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
-import { useToast } from 'vue-toastification'
+import { useToast, POSITION } from 'vue-toastification'
 import { saveContactMessage, type ContactFormData } from '../services/firebaseService'
 
 // Toast notification
@@ -110,7 +110,7 @@ const onSubmit = handleSubmit(async (values) => {
     // Show success toast
     toast.success('Message sent successfully! I\'ll get back to you soon.', {
       timeout: 5000,
-      position: 'top-right'
+      position: POSITION.TOP_RIGHT
     })
 
     // Reset form
@@ -119,7 +119,7 @@ const onSubmit = handleSubmit(async (values) => {
     console.error('Form submission error:', error)
     toast.error('Failed to send message. Please try again later.', {
       timeout: 5000,
-      position: 'top-right'
+      position: POSITION.TOP_RIGHT
     })
   } finally {
     isSubmitting.value = false
